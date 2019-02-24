@@ -1,7 +1,9 @@
 package org.jastka4.knapsack;
 
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * {@inheritDoc}
@@ -9,20 +11,16 @@ import java.util.*;
  * Dynamic programming implementation of the discrete knapsack problem.
  */
 public class DynamicProgramming implements Knapsack {
-	// items of our problem
-	private List<Item> items;
-	// capacity of the bag
-	private int capacity;
+	// instance of the problem
+	private ProblemInstance problemInstance;
 
 	/**
-	 * Class constructor specifying items of our problem and capacity of the bag.
+	 * Class constructor specifying instance of the discrete knapsack problem.
 	 *
-	 * @param items list of items
-	 * @param capacity capacity of the bag
+	 * @param problemInstance   instance of the discrete knapsack problem
 	 */
-	public DynamicProgramming(final List<Item> items, final int capacity) {
-		this.items = items;
-		this.capacity = capacity;
+	public DynamicProgramming(final ProblemInstance problemInstance) {
+		this.problemInstance = problemInstance;
 	}
 
 	/**
@@ -45,10 +43,10 @@ public class DynamicProgramming implements Knapsack {
 	public String toString() {
 		StringBuilder stringBuilder = new StringBuilder()
 			.append("DynamicProgramming problem")
-			.append("\nCapacity : ").append(capacity)
+			.append("\nCapacity : ").append(problemInstance.getCapacity())
 			.append("\nItems :");
 
-		for (Item item : items) {
+		for (Item item : problemInstance.getItems()) {
 			stringBuilder.append("\n- ").append(item);
 		}
 
@@ -58,7 +56,9 @@ public class DynamicProgramming implements Knapsack {
 	// we write the solve algorithm
 	@Override
 	public Solution solve() {
-		int size = items.size();
+		List<Item> items = problemInstance.getItems();
+		int size = problemInstance.getItems().size();
+		int capacity = problemInstance.getCapacity();
 		// we use a matrix to store the max value at each n-th item
 		BigDecimal[][] matrix = new BigDecimal[size + 1][capacity + 1];
 
@@ -109,7 +109,9 @@ public class DynamicProgramming implements Knapsack {
 				new Item("Elt4", BigDecimal.valueOf(1), 1),
 				new Item("Elt5", BigDecimal.valueOf(10), 4));
 
-		DynamicProgramming dynamicProgramming = new DynamicProgramming(items, 15);
+		ProblemInstance problemInstance = new ProblemInstance(items, 15);
+
+		DynamicProgramming dynamicProgramming = new DynamicProgramming(problemInstance);
 		System.out.println(dynamicProgramming);
 		Solution solution = dynamicProgramming.solve();
 		System.out.println(solution);
