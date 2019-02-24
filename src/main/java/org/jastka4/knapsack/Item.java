@@ -44,21 +44,36 @@ public class Item {
 	}
 
 	/**
-	 * @return
+	 * Returns item's value for weight ratio.
+	 *
+	 * @return ratio
+	 */
+	public BigDecimal getRatio() {
+		return value.divide(BigDecimal.valueOf(weight), 2, RoundingMode.HALF_UP);
+	}
+
+	/**
+	 * Returns name of the item.
+	 *
+	 * @return item's name
 	 */
 	public String getName() {
 		return name;
 	}
 
 	/**
-	 * @return
+	 * Return value of the item.
+	 *
+	 * @return item's value
 	 */
 	public BigDecimal getValue() {
 		return value;
 	}
 
 	/**
-	 * @return
+	 * Returns weight of the item.
+	 *
+	 * @return item's weight
 	 */
 	public int getWeight() {
 		return weight;
