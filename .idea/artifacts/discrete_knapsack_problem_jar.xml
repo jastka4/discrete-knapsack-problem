@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="discrete-knapsack-problem:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/discrete_knapsack_problem_jar</output-path>
+    <root id="archive" name="discrete-knapsack-problem.jar">
+      <element id="module-output" name="discrete-knapsack-problem" />
+    </root>
+  </artifact>
+</component>
