@@ -7,9 +7,7 @@ import java.util.List;
  * that can be put into the bag and the capacity of the bag.
  */
 public class ProblemInstance {
-	// items of our problem
 	private List<Item> items;
-	// capacity of the bag
 	private int capacity;
 
 	/**

@@ -4,7 +4,8 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 /**
- *
+ * Item of the discrete knapsack problem containing name,
+ * value and weight of the object.
  */
 public class Item {
 	private String name;

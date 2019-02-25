@@ -27,7 +27,7 @@ public class BruteForce implements Knapsack {
 		BigDecimal bestProfit = BigDecimal.valueOf(-1);
 		List<Item> bestItems = new ArrayList<>();
 
-		for (BigInteger i = BigInteger.ZERO; i.compareTo(BigInteger.ONE.shiftLeft(size)) < 0; i = i.add(BigInteger.ONE)) {
+		for (BigInteger i = BigInteger.ZERO; i.compareTo(BigInteger.TWO.shiftLeft(size)) < 0; i = i.add(BigInteger.ONE)) {
 			int totalWeight = 0;
 			BigDecimal totalProfit = BigDecimal.ZERO;
 			List<Item> totalItems = new ArrayList<>();
@@ -46,23 +46,6 @@ public class BruteForce implements Knapsack {
 		}
 
 		return new Solution(bestItems, bestProfit);
-	}
-
-	public static void main(String[] args) {
-		// we take the same instance of the problem displayed in the image
-		List<Item> items = Arrays.asList(
-				new Item("Elt1", BigDecimal.valueOf(4), 12),
-				new Item("Elt2", BigDecimal.valueOf(2.15), 1),
-				new Item("Elt3", BigDecimal.valueOf(2), 2),
-				new Item("Elt4", BigDecimal.valueOf(1), 1),
-				new Item("Elt5", BigDecimal.valueOf(10), 4));
-
-		ProblemInstance problemInstance = new ProblemInstance(items, 15);
-
-		BruteForce bruteForce = new BruteForce(problemInstance);
-		System.out.println(bruteForce);
-		Solution solution = bruteForce.solve();
-		System.out.println(solution);
 	}
 
 	@Override

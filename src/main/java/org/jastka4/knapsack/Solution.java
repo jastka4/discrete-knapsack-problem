@@ -9,9 +9,7 @@ import java.util.List;
  * to put in the bag to have the maximal value and the maximal value possible.
  */
 public class Solution {
-	// list of items to put in the bag to have the maximal value
 	private List<Item> items;
-	// maximal value possible
 	private BigDecimal value;
 
 	/**
