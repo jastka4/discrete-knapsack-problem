@@ -23,36 +23,6 @@ public class DynamicProgramming implements KnapsackAlgorithm {
 		this.problemInstance = problemInstance;
 	}
 
-	/**
-	 * Returns a string representation of this solution. This method
-	 * is intended to be used only for debugging purposes.
-	 * This method returns a string equal to the value of:
-	 * <blockquote><pre>
-	 * 'DynamicProgramming problem'
-	 * 'Capacity : ' + capacity
-	 * 'Items :'
-	 * for (Item item : items) {
-	 *     '- ' + item;
-	 * }
-	 * </pre></blockquote>
-	 *
-	 * @return  a string representation of the item.
-	 * @see Item
-	 */
-	@Override
-	public String toString() {
-		StringBuilder stringBuilder = new StringBuilder()
-			.append("DynamicProgramming problem")
-			.append("\nCapacity : ").append(problemInstance.getCapacity())
-			.append("\nItems :");
-
-		for (Item item : problemInstance.getItems()) {
-			stringBuilder.append("\n- ").append(item);
-		}
-
-		return stringBuilder.toString();
-	}
-
 	// we write the solve algorithm
 	@Override
 	public Solution solve() {

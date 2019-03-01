@@ -1,6 +1,7 @@
 package org.jastka4.knapsack;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class GreedyAlgorithm implements KnapsackAlgorithm {
 
 	@Override
 	public Solution solve() {
-		List<Item> items = problemInstance.getItems();
+		List<Item> items = new ArrayList<>(problemInstance.getItems());
 		items.sort(Comparator.comparing(Item::getRatio).reversed());
 
 		int numberOfItems = 0;
@@ -27,12 +28,11 @@ public class GreedyAlgorithm implements KnapsackAlgorithm {
 		BigDecimal value = BigDecimal.ZERO;
 
 		for (Item item: items) {
-			if (capacityUsed + item.getWeight() > problemInstance.getCapacity()) {
-				break;
+			if (capacityUsed + item.getWeight() <= problemInstance.getCapacity()) {
+				capacityUsed += item.getWeight();
+				value = value.add(item.getValue());
+				numberOfItems++;
 			}
-			capacityUsed += item.getWeight();
-			value = value.add(item.getValue());
-			numberOfItems++;
 		}
 
 		return new Solution(items.subList(0, numberOfItems), value);
