@@ -1,7 +1,6 @@
 package org.jastka4.knapsack;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
@@ -10,8 +9,8 @@ import java.util.List;
  *
  * Greedy algorithm implementation of the discrete knapsack problem.
  */
-public class GreedyAlgorithm implements Knapsack {
-	// instance of the problem
+public class GreedyAlgorithm implements KnapsackAlgorithm {
+
 	private ProblemInstance problemInstance;
 
 	public GreedyAlgorithm(final ProblemInstance problemInstance) {

@@ -3,7 +3,6 @@ package org.jastka4.knapsack;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -11,8 +10,8 @@ import java.util.List;
  *
  * Brute force implementation of the discrete knapsack problem.
  */
-public class BruteForce implements Knapsack {
-	// instance of the problem
+public class BruteForce implements KnapsackAlgorithm {
+
 	private ProblemInstance problemInstance;
 
 	public BruteForce(final ProblemInstance problemInstance) {

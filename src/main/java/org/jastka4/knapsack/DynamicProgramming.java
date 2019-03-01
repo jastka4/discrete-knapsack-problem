@@ -10,8 +10,8 @@ import java.util.List;
  *
  * Dynamic programming implementation of the discrete knapsack problem.
  */
-public class DynamicProgramming implements Knapsack {
-	// instance of the problem
+public class DynamicProgramming implements KnapsackAlgorithm {
+
 	private ProblemInstance problemInstance;
 
 	/**
