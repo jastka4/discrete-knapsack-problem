@@ -26,25 +26,6 @@ public class Item {
 	}
 
 	/**
-	 * Returns a string representation of this item. This method
-	 * is intended to be used only for debugging purposes.
-	 * This method returns a string equal to the value of:
-	 * <blockquote><pre>
-	 * name + ' [value = ' + value.setScale(2, RoundingMode.HALF_UP) + ', weight = ' + weight + ']';
-	 * </pre></blockquote>
-	 *
-	 * @return  a string representation of the item.
-	 */
-	@Override
-	public String toString() {
-		return new StringBuilder()
-				.append(name)
-				.append(" [value = ").append(value.setScale(2, RoundingMode.HALF_UP))
-				.append(", weight = ").append(weight).append("]")
-				.toString();
-	}
-
-	/**
 	 * Returns item's value for weight ratio.
 	 *
 	 * @return ratio

@@ -1,4 +1,9 @@
-package org.jastka4.knapsack;
+package org.jastka4.knapsack.algorithms;
+
+import org.jastka4.knapsack.Item;
+import org.jastka4.knapsack.KnapsackAlgorithm;
+import org.jastka4.knapsack.ProblemInstance;
+import org.jastka4.knapsack.Solution;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -18,6 +23,9 @@ public class GreedyAlgorithm implements KnapsackAlgorithm {
 		this.problemInstance = problemInstance;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public Solution solve() {
 		List<Item> items = new ArrayList<>(problemInstance.getItems());
@@ -38,6 +46,9 @@ public class GreedyAlgorithm implements KnapsackAlgorithm {
 		return new Solution(items.subList(0, numberOfItems), value);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String getDescription() {
 		return null;

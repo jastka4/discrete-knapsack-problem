@@ -1,4 +1,9 @@
-package org.jastka4.knapsack;
+package org.jastka4.knapsack.algorithms;
+
+import org.jastka4.knapsack.Item;
+import org.jastka4.knapsack.KnapsackAlgorithm;
+import org.jastka4.knapsack.ProblemInstance;
+import org.jastka4.knapsack.Solution;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -23,7 +28,9 @@ public class DynamicProgramming implements KnapsackAlgorithm {
 		this.problemInstance = problemInstance;
 	}
 
-	// we write the solve algorithm
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public Solution solve() {
 		List<Item> items = problemInstance.getItems();
@@ -65,6 +72,9 @@ public class DynamicProgramming implements KnapsackAlgorithm {
 		return new Solution(itemsSolution, matrix[size][capacity]);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String getDescription() {
 		return "";

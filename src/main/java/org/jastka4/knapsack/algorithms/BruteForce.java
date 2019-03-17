@@ -1,4 +1,9 @@
-package org.jastka4.knapsack;
+package org.jastka4.knapsack.algorithms;
+
+import org.jastka4.knapsack.Item;
+import org.jastka4.knapsack.KnapsackAlgorithm;
+import org.jastka4.knapsack.ProblemInstance;
+import org.jastka4.knapsack.Solution;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -18,6 +23,9 @@ public class BruteForce implements KnapsackAlgorithm {
 		this.problemInstance = problemInstance;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public Solution solve() {
 		final List<Item> items = problemInstance.getItems();
@@ -47,6 +55,9 @@ public class BruteForce implements KnapsackAlgorithm {
 		return new Solution(bestItems, bestProfit);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 */
 	@Override
 	public String getDescription() {
 		return null;
